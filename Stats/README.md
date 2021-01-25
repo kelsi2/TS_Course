@@ -17,10 +17,12 @@ The goal of this project is to take in a csv spreadsheet, load in a NodeJS appli
 
 5. Parsing date data from strings. Created reusable class to handle this functionality.
 
-6. Working with generics:
+6. Working with generics using parent classes (inheritance):
 
 - Like function arguments but for types in class/function definitions
 - Allows us to define type of property/argument/return value at a future point
 - Used heavily when writing reusable code
 
-7. Alternative approach using interfaces. This doesn't rely on inheritance the same way generics does, instead readers are all separate classes that implement a DataReader interface which makes for more reusable code.
+7. Alternative approach using interfaces (composition). This doesn't rely on inheritance the same way generics does, instead readers are all separate classes that implement a DataReader interface which makes for more reusable code. This is a preferable method because there is less dependence on other classes and less need for duplication.
+
+8. How to run reports in the terminal as well as html. This has been done with reusable code that doesn't depend on other classes.

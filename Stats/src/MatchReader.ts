@@ -1,8 +1,7 @@
+import { CsvFileReader } from "./CsvFileReader";
+import { MatchData } from "./MatchData";
 import { dateStringToDate } from "./utils";
 import { MatchResult } from "./MatchResult";
-
-// Define tuple, data must always be in this exact order
-type MatchData = [Date, string, string, number, number, MatchResult, string];
 
 interface DataReader {
   read(): void;
@@ -10,6 +9,10 @@ interface DataReader {
 }
 
 export class MatchReader {
+  static fromCsv(filename: string): MatchReader {
+    return new MatchReader(new CsvFileReader(filename));
+  }
+
   matches: MatchData[] = [];
 
   constructor(public reader: DataReader) {}
