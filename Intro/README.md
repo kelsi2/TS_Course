@@ -1,6 +1,6 @@
 # TypeScript Intro
 
-This is the first app I'm building using TypeScript. Following along with [TypeScript: The Complete Developer's Guide [2020]](https://www.udemy.com/course/typescript-the-complete-developers-guide/) on Udemy.
+This is the first app I'm building using TypeScript.
 The goal of this app is to make a network request to fetch some JSON and print the result.
 
 ### What I Learned
