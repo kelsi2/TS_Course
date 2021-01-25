@@ -7,6 +7,7 @@ exports.CsvFileReader = void 0;
 // 1. Load
 var fs_1 = __importDefault(require("fs"));
 // Make our file reading something we can use as we need it, rather than hard coded
+// Using a generic <TypeofData>(<T>) so this function can take in any data type we pass in which makes it reusable
 var CsvFileReader = /** @class */ (function () {
     // Pass in the filename we want to open
     function CsvFileReader(filename) {
@@ -23,7 +24,10 @@ var CsvFileReader = /** @class */ (function () {
             .split("\n")
             .map(function (row) {
             return row.split(",");
-        });
+        })
+            // Convert data types of each index
+            // This is not a good place for an array because we would need to define four possible types, instead we can use a tuple
+            .map(this.mapRow);
     };
     return CsvFileReader;
 }());

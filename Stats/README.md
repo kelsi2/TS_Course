@@ -22,3 +22,5 @@ The goal of this project is to take in a csv spreadsheet, load in a NodeJS appli
 - Like function arguments but for types in class/function definitions
 - Allows us to define type of property/argument/return value at a future point
 - Used heavily when writing reusable code
+
+7. Alternative approach using interfaces. This doesn't rely on inheritance the same way generics does, instead readers are all separate classes that implement a DataReader interface which makes for more reusable code.
