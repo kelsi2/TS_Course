@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var MatchReader_1 = require("./MatchReader");
 var MatchResult_1 = require("./MatchResult");
-// 1. Load
-var CsvFileReader_1 = require("./CsvFileReader");
 // 2. Parse
-var reader = new CsvFileReader_1.CsvFileReader("football.csv");
+var reader = new MatchReader_1.MatchReader("football.csv");
 reader.read();
 // 3. Analyze
 // Analyze data to find all Man United wins either home or away

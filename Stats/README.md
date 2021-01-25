@@ -13,6 +13,12 @@ The goal of this project is to take in a csv spreadsheet, load in a NodeJS appli
 - Can reference values using '.' syntax like objects. The type is whatever the name of the enum is (in our example MatchResult).
 - We can't come back later to change an enum, they need to be written at the time we are writing the code. Values need to be known (can't be obtained through a network request or looping over data).
 
-4. Created a separate class for reading csv files, this is reusable in other projects.
+4. Created a separate class for reading csv files, this is reusable in other projects. This is an abstract class, we then created a child subclass which is specific to this project.
 
 5. Parsing date data from strings. Created reusable class to handle this functionality.
+
+6. Working with generics:
+
+- Like function arguments but for types in class/function definitions
+- Allows us to define type of property/argument/return value at a future point
+- Used heavily when writing reusable code

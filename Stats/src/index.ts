@@ -1,9 +1,8 @@
+import { MatchReader } from "./MatchReader";
 import { MatchResult } from "./MatchResult";
-// 1. Load
-import { CsvFileReader } from "./CsvFileReader";
 
 // 2. Parse
-const reader = new CsvFileReader("football.csv");
+const reader = new MatchReader("football.csv");
 reader.read();
 
 // 3. Analyze

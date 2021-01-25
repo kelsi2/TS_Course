@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CsvFileReader = void 0;
-var utils_1 = require("./utils");
 // 1. Load
 var fs_1 = __importDefault(require("fs"));
 // Make our file reading something we can use as we need it, rather than hard coded
+// Using a generic <TypeofData>(<T>) so this function can take in any data type we pass in which makes it reusable
 var CsvFileReader = /** @class */ (function () {
     // Pass in the filename we want to open
     function CsvFileReader(filename) {
@@ -27,18 +27,7 @@ var CsvFileReader = /** @class */ (function () {
         })
             // Convert data types of each index
             // This is not a good place for an array because we would need to define four possible types, instead we can use a tuple
-            .map(function (row) {
-            return [
-                utils_1.dateStringToDate(row[0]),
-                row[1],
-                row[2],
-                parseInt(row[3]),
-                parseInt(row[4]),
-                // Type assertion (this is not a string, but an enum called MatchResult e.g. 'H', 'A', 'D')
-                row[5],
-                row[6],
-            ];
-        });
+            .map(this.mapRow);
     };
     return CsvFileReader;
 }());
