@@ -18,3 +18,9 @@ The goal of this project is to build a web framework application. We are using M
 ## What I Learned
 
 1. How to use JSON Server, a pre-built server that runs with axios with almost no config. This can be easily exchanged with other servers that implement REST. IDs are automatically assigned with each request (e.g. if a user has an ID, it has a server-side representation, if not it's a new user). The config JSON file (db.json) is where routes are created and will log all data available on the server.
+2. Options for working with data, these can be implemented with interfaces:
+
+- Serialize - Convert data from an object into some savable format (json)
+- Deserialize - Put data on an object using some previously saved data (json)
+
+3.
