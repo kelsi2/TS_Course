@@ -1,8 +1,6 @@
 import { User } from "./models/User";
 
-const user = new User({ name: "myname", age: 20 });
+// We are indicating this user has a backend representation since it has an id. The info can be retrieved from the server
+const user = new User({ name: "new record", age: 0 });
 
-user.set({ name: "newname", age: 9999 });
-
-console.log(user.get("name"));
-console.log(user.get("age"));
+user.save();
