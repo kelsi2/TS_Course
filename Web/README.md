@@ -23,4 +23,10 @@ The goal of this project is to build a web framework application. We are using M
 - Serialize - Convert data from an object into some savable format (json)
 - Deserialize - Put data on an object using some previously saved data (json)
 
-3.
+3. Strings can be types. E.g we can define a type BestName = 'stephen' and we will not be able to pass in any values to that type other than 'stephen'.
+
+4. In JS/TS all object keys are strings. Even if they look like they have another type like number they are automatically strings. This is due to automatic type conversion, all other types are converted to strings. As a result keys of objects can be types (since strings can be types).
+
+5. Generics can be used for methods as well as classes. See Attributes file for notes.
+
+6. How to delegate methods to other classes. This allows using methods on User without saying something like user.attributes.get(), we can just use user.get().

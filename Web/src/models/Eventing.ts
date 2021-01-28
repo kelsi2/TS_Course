@@ -8,15 +8,15 @@ export class Eventing {
 
   // We need to support multiple listeners with the appropriate callback functions
   // When the event is called we will run all of the callbacks in the callback array (if any)
-  on(eventName: string, callback: Callback): void {
+  on = (eventName: string, callback: Callback): void => {
     // this.events[eventName] => Callback[] or undefined (when user is first called this will be undefined but events will be added)
 
     const handlers = this.events[eventName] || [];
     handlers.push(callback);
     this.events[eventName] = handlers;
-  }
+  };
 
-  trigger(eventName: string): void {
+  trigger = (eventName: string): void => {
     const handlers = this.events[eventName];
 
     if (!handlers || handlers.length === 0) {
@@ -26,5 +26,5 @@ export class Eventing {
     handlers.forEach((callback) => {
       callback();
     });
-  }
+  };
 }

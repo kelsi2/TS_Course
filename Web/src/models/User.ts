@@ -1,3 +1,4 @@
+import { Attributes } from "./Attributes";
 import { Sync } from "./Sync";
 import { Eventing } from "./Eventing";
 
@@ -14,14 +15,22 @@ export interface UserProps {
 export class User {
   public events: Eventing = new Eventing();
   public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
+  public attributes: Attributes<UserProps>;
 
-  constructor(private data: UserProps) {}
-
-  get(propName: string): string | number {
-    return this.data[propName];
+  constructor(attrs: UserProps) {
+    this.attributes = new Attributes<UserProps>(attrs);
   }
 
-  set(update: UserProps): void {
-    Object.assign(this.data, update);
+  // This will call the on method from the eventing file, we don't need to define any of the code here that is already defined there
+  get on() {
+    return this.events.on;
+  }
+
+  get trigger() {
+    return this.events.trigger;
+  }
+
+  get get() {
+    return this.attributes.get;
   }
 }
