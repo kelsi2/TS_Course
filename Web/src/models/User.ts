@@ -1,8 +1,7 @@
-import { Attributes } from "./Attributes";
-import { Sync } from "./Sync";
 import { Eventing } from "./Eventing";
-
-const rootUrl = "http://localhost:3000/users";
+import { ApiSync } from "./ApiSync";
+import { Attributes } from "./Attributes";
+import { Model } from "./Model";
 
 export interface UserProps {
   // Question mark means these properties are optional. This is important for the set method where we likely only want to update one, not both
@@ -12,25 +11,14 @@ export interface UserProps {
   age?: number;
 }
 
-export class User {
-  public events: Eventing = new Eventing();
-  public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
-  public attributes: Attributes<UserProps>;
+const rootUrl = "http://localhost:3000/users";
 
-  constructor(attrs: UserProps) {
-    this.attributes = new Attributes<UserProps>(attrs);
-  }
-
-  // This will call the on method from the eventing file, we don't need to define any of the code here that is already defined there
-  get on() {
-    return this.events.on;
-  }
-
-  get trigger() {
-    return this.events.trigger;
-  }
-
-  get get() {
-    return this.attributes.get;
+export class User extends Model<UserProps> {
+  static buildUser(attrs: UserProps): User {
+    return new User(
+      new Attributes<UserProps>(attrs),
+      new Eventing(),
+      new ApiSync<UserProps>(rootUrl)
+    );
   }
 }

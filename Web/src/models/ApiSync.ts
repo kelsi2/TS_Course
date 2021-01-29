@@ -5,7 +5,7 @@ interface HasId {
   id?: number;
 }
 
-export class Sync<T extends HasId> {
+export class ApiSync<T extends HasId> {
   // Url will be passed in whenever sync is called
   constructor(public rootUrl: string) {}
 
