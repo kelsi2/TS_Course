@@ -28,17 +28,9 @@ export class Model<T extends HasId> {
   ) {}
 
   // This will call the on method from the eventing file, we don't need to define any of the code here that is already defined there
-  get on() {
-    return this.events.on;
-  }
-
-  get trigger() {
-    return this.events.trigger;
-  }
-
-  get get() {
-    return this.attributes.get;
-  }
+  on = this.events.on;
+  trigger = this.events.trigger;
+  get = this.attributes.get;
 
   set(update: T): void {
     this.attributes.set(update);
