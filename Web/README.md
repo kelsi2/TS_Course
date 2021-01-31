@@ -30,3 +30,7 @@ The goal of this project is to build a web framework application. We are using M
 5. Generics can be used for methods as well as classes. See Attributes file for notes.
 
 6. How to delegate methods to other classes. This allows using methods on User without saying something like user.attributes.get(), we can just use user.get().
+
+7. Using models and views so I gained some familiarity with the MVC framework.
+
+8. Creating an event map to bind events to HTML template. Methods are defined in the User model rather than the views.
