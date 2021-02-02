@@ -13,4 +13,28 @@
 
 ### Aside: Decorators
 
--
+-TS Decorators:
+
+- Functions that can be used to modify/change/anything different properties/methods in the class
+- Not the same as JS decorators
+- Used inside/on classes only
+- Understanding the order in which decorators are run are the key to understanding them
+- Decorators are experimental, need to enable them in tsconfig file
+
+* See decorators.ts for examples
+
+* Decorators can take four arguments:
+
+  - First arg is the prototype, will list all the getters and functions defined in the class
+    - Properties will not show up in this list since they are not added to the prototype
+  - Second arg is the key of the property/method/accessor on the object
+  - Third arg is the property descriptor
+  - Decorators are applied when code is run, not when the instance is created
+
+* Property Descriptor for Methods can have following options:
+  - Writable (whether or not property can be changed)
+  - Enumerable (whether property get looped over by a 'for...in')
+  - Value (current value)
+  - Configurable (property def can be changed and property can be deleted)
+    - Can use Object.getOwnPropertyDescriptor to see these traits
+    * Can use Object.defineProperty to adjust these traits
