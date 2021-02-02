@@ -38,3 +38,13 @@
   - Configurable (property def can be changed and property can be deleted)
     - Can use Object.getOwnPropertyDescriptor to see these traits
     * Can use Object.defineProperty to adjust these traits
+
+### Aside: Metadata
+
+- Proposed feature to be added to JS/TS (experimental)
+- Snippets of info that can be tied to a method, property, or class definition (any kind of object)
+- Can be used for custom stuff
+- TS will optionally provide type info as metadata (types can be passed to JS using metadata, usually these disappear when converting from TS to JS)
+- Read and written using reflect-metadata packaged
+
+* See metadata.ts for examples
