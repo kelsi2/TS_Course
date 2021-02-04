@@ -13,3 +13,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // This allows us to just import the decorators folder rather than each individual file in it
 __exportStar(require("./controller"), exports);
 __exportStar(require("./routes"), exports);
+__exportStar(require("./use"), exports);
+__exportStar(require("./bodyValidator"), exports);
